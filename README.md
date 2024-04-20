@@ -1,1 +1,1 @@
-Aulas de React na Digital College
+Aulas de React na Digital College.
