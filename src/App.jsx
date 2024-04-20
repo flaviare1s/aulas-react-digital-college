@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const style = {
+  backgroundColor: "tomato",
+  color: "white",
+  borderRadius: "10px",
+  cursor: "pointer",
+  marginTop: "10px",
+};
 
+export function Botao(props) {
+  console.log(props);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <button style={style}>
+      {props.nome} {props.sobrenome} {props.msg} {props.desconto} de desconto,
+      compre-me
+    </button>
+  );
 }
 
-export default App
+export function Card() {
+  return (
+    <div className="card">
+      <h1>NFT - Art</h1>
+      <h2>video art</h2>
+      <h3>R$ 50000</h3>
+      <img src="vite.svg" alt="Vite Logo" />
+      <Botao
+        nome="Ítalo"
+        sobrenome="Adler"
+        desconto="10%"
+        msg="Parabéns! Você ganhou "
+      />
+    </div>
+  );
+}
+
+export function App() {
+  // const [count, setCount] = useState(0)
+  return <Card />;
+}
